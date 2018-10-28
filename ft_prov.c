@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write.c                                         :+:      :+:    :+:   */
+/*   ft_prov.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/28 22:10:52 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 23:13:14 by kfalia-f         ###   ########.fr       */
+/*   Created: 2018/10/28 22:35:24 by kfalia-f          #+#    #+#             */
+/*   Updated: 2018/10/28 23:10:33 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+int		ft_box2(int **arr, int i, int j, int n);
+int		ft_stroka2(int **arr, int i, int j, int n);
 
-void	ft_write(int **arr)
+int		ft_prov(int **arr)
 {
-	int		i;
-	int		j;
+	int i;
+	int j;
+	int k;
 
 	i = 0;
+	k = 0;
 	while (i < 9)
 	{
 		j = 0;
 		while (j < 9)
 		{
-			ft_putchar(arr[i][j] + '0');
-			if (j != 8)
-				ft_putchar(' ');
+			if (ft_box2(arr, i - (i % 3), j - (j % 3), arr[i][j]) == 0
+					|| ft_stroka2(arr, i, j, arr[i][j]) == 0)
+				k++;
 			j++;
 		}
 		i++;
-		ft_putchar('\n');
 	}
+	if (k != 0)
+		return (0);
+	return (1);
 }

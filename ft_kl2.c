@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write.c                                         :+:      :+:    :+:   */
+/*   ft_kl2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/28 22:10:52 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 23:13:14 by kfalia-f         ###   ########.fr       */
+/*   Created: 2018/10/28 22:27:44 by kfalia-f          #+#    #+#             */
+/*   Updated: 2018/10/28 23:08:22 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_write(int **arr)
+int		ft_kl2(int argc, char **argv)
 {
 	int		i;
 	int		j;
+	int		k;
 
-	i = 0;
-	while (i < 9)
+	i = 1;
+	k = 0;
+	while (i < argc)
 	{
 		j = 0;
-		while (j < 9)
+		while (argv[i][j] != '\0')
 		{
-			ft_putchar(arr[i][j] + '0');
-			if (j != 8)
-				ft_putchar(' ');
+			if (argv[i][j] != '.')
+				if ((argv[i][j] < '0') || (argv[i][j] > '9'))
+					k++;
 			j++;
 		}
 		i++;
-		ft_putchar('\n');
 	}
+	if (k != 0)
+		return (0);
+	return (1);
 }

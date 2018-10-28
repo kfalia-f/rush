@@ -6,17 +6,17 @@
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 19:47:43 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 20:48:54 by kfalia-f         ###   ########.fr       */
+/*   Updated: 2018/10/28 23:11:30 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_stroka(int **arr, int i, int j, int n)
-{   
+int		ft_stroka(int **arr, int i, int j, int n)
+{
 	int k;
 
 	k = 0;
 	while (k < 9)
-	{   
+	{
 		if (arr[i][k] == n || arr[k][j] == n)
 			return (0);
 		k++;

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write.c                                         :+:      :+:    :+:   */
+/*   ft_stroka2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/28 22:10:52 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 23:13:14 by kfalia-f         ###   ########.fr       */
+/*   Created: 2018/10/28 22:59:24 by kfalia-f          #+#    #+#             */
+/*   Updated: 2018/10/28 23:11:53 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_write(int **arr)
+int		ft_stroka2(int **arr, int i, int j, int n)
 {
-	int		i;
-	int		j;
+	int k;
+	int l;
 
-	i = 0;
-	while (i < 9)
+	k = 0;
+	l = 0;
+	while (k < 9)
 	{
-		j = 0;
-		while (j < 9)
-		{
-			ft_putchar(arr[i][j] + '0');
-			if (j != 8)
-				ft_putchar(' ');
-			j++;
-		}
-		i++;
-		ft_putchar('\n');
+		if (arr[i][k] == n || arr[k][j] == n)
+			l++;
+		k++;
 	}
+	if (l == 1 || l == 2)
+		return (1);
+	else
+		return (0);
 }

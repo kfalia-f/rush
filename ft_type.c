@@ -6,12 +6,14 @@
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 18:18:44 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 22:16:46 by kfalia-f         ###   ########.fr       */
+/*   Updated: 2018/10/28 22:44:47 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdlib.h>
 
+int		ft_prov(int **arr);
 int		ft_sudoku(int **arr);
 void	ft_putchar(char c);
 void	ft_write(int **arr);
@@ -39,5 +41,8 @@ void	ft_type(int argc, char **argv)
 		i++;
 	}
 	ft_sudoku(arr);
-	ft_write(arr);
+	if (ft_prov(arr) == 1)
+		ft_write(arr);
+	else
+		write(1, "Error\n", 6);
 }

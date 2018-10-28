@@ -6,15 +6,15 @@
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 19:50:19 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 21:46:45 by kfalia-f         ###   ########.fr       */
+/*   Updated: 2018/10/28 23:08:57 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_kl(int argc, char **argv)
+int		ft_kl(int argc, char **argv)
 {
-	int     i;
-	int     j;
-	int     k;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 1;
 	k = 0;
@@ -26,10 +26,10 @@ int     ft_kl(int argc, char **argv)
 			if (argv[i][j] != '.')
 				k++;
 			j++;
-		}   
+		}
 		i++;
-	}   
+	}
 	if (k < 17)
 		return (0);
 	return (1);
-}   
+}

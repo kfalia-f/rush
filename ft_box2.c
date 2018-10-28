@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write.c                                         :+:      :+:    :+:   */
+/*   ft_box2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/28 22:10:52 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 23:13:14 by kfalia-f         ###   ########.fr       */
+/*   Created: 2018/10/28 22:56:32 by kfalia-f          #+#    #+#             */
+/*   Updated: 2018/10/28 23:06:15 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_write(int **arr)
+int		ft_box2(int **arr, int start_i, int start_j, int n)
 {
-	int		i;
-	int		j;
+	int i;
+	int j;
+	int k;
 
 	i = 0;
-	while (i < 9)
+	k = 0;
+	while (i < 3)
 	{
 		j = 0;
-		while (j < 9)
+		while (j < 3)
 		{
-			ft_putchar(arr[i][j] + '0');
-			if (j != 8)
-				ft_putchar(' ');
+			if (arr[i + start_i][j + start_j] == n)
+				k++;
 			j++;
 		}
 		i++;
-		ft_putchar('\n');
 	}
+	if (k == 1)
+		return (1);
+	else
+		return (0);
 }
