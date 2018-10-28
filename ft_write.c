@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find.c                                          :+:      :+:    :+:   */
+/*   ft_write.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/28 19:29:38 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 21:37:58 by kfalia-f         ###   ########.fr       */
+/*   Created: 2018/10/28 22:10:52 by kfalia-f          #+#    #+#             */
+/*   Updated: 2018/10/28 22:12:53 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_find(int **arr, int *i, int *j)
+void	ft_putchar(char c);
+
+void	ft_write(int **arr)
 {
-	*i = 0;
-	while (*i < 9)
+	int		i;
+	int		j;
+	i = 0;
+	while (i < 9)
 	{
-		*j = 0;
-		while (*j < 9)
+		j = 0;
+		while (j < 9)
 		{
-			if (arr[*i][*j] == 0)
-				return (1);
-			*j = *j + 1;
+			ft_putchar(arr[i][j] + '0');
+			if (j != 8)
+				ft_putchar(' ');
+			j++;
 		}
-		*i = *i + 1;
+		i++;
+		ft_putchar('\n');
 	}
-	return (0);
 }

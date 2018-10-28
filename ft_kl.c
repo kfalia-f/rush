@@ -6,11 +6,11 @@
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 19:50:19 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 20:54:04 by kfalia-f         ###   ########.fr       */
+/*   Updated: 2018/10/28 21:46:45 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_kl(int ColStrok, char **Stroka)
+int     ft_kl(int argc, char **argv)
 {
 	int     i;
 	int     j;
@@ -18,12 +18,12 @@ int     ft_kl(int ColStrok, char **Stroka)
 
 	i = 1;
 	k = 0;
-	while (i <= ColStrok)
+	while (i < argc)
 	{
 		j = 0;
-		while (Stroka[i][j] != '\0')
+		while (argv[i][j] != '\0')
 		{
-			if (Stroka[i][j] != '.')
+			if (argv[i][j] != '.')
 				k++;
 			j++;
 		}   

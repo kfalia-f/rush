@@ -6,7 +6,7 @@
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 18:18:44 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 20:46:06 by kfalia-f         ###   ########.fr       */
+/*   Updated: 2018/10/28 22:16:46 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_sudoku(int **arr);
 void	ft_putchar(char c);
+void	ft_write(int **arr);
 
 void	ft_type(int argc, char **argv)
 {
@@ -21,9 +22,9 @@ void	ft_type(int argc, char **argv)
 	int		j;
 	int		**arr;
 
-	arr = (int**)malloc(81 * sizeof(int));
 	i = 1;
-	while (i <= argc)
+	arr = (int**)malloc(81 * sizeof(int));
+	while (i < argc)
 	{
 		arr[i - 1] = (int*)malloc(9 * sizeof(int));
 		j = 0;
@@ -37,5 +38,6 @@ void	ft_type(int argc, char **argv)
 		}
 		i++;
 	}
-	ft_sudoku((int**)arr);
+	ft_sudoku(arr);
+	ft_write(arr);
 }
