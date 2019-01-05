@@ -6,9 +6,11 @@
 /*   By: kfalia-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 19:56:13 by kfalia-f          #+#    #+#             */
-/*   Updated: 2018/10/28 23:12:32 by kfalia-f         ###   ########.fr       */
+/*   Updated: 2018/10/28 23:25:30 by kfalia-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 int		ft_find(int **arr, int *i, int *j);
 int		ft_stroka(int **arr, int i, int j, int n);
@@ -19,8 +21,10 @@ int		ft_sudoku(int **arr)
 	int		i;
 	int		j;
 	int		n;
+	int		k;
 
 	i = 0;
+	k = 0;
 	j = 0;
 	n = 1;
 	if (ft_find(arr, &i, &j) == 0)
@@ -32,8 +36,13 @@ int		ft_sudoku(int **arr)
 		{
 			arr[i][j] = n;
 			if (ft_sudoku(arr) == 1)
-				return (1);
+				k++;
 			arr[i][j] = 0;
+		}
+		if (k == 2)
+		{
+			write(1, "Error\n", 6);
+			return (0);
 		}
 		n++;
 	}
